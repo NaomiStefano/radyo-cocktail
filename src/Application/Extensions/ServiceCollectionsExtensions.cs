@@ -26,7 +26,7 @@ public static class ServiceCollectionsExtensions
 
         var types = assembly.GetExportedTypes()
             .Where(t => t.GetInterfaces().Any(i =>
-                i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IMapFrom<>)))
+                i.IsGenericType && i.GetGenericTypeDefinition() == typeof(Mappers.IMapFrom<>)))
             .ToList();
 
         var config = TypeAdapterConfig.GlobalSettings;

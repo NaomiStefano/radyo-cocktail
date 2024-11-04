@@ -18,3 +18,9 @@ else{
 	dotnet ef migrations script -o .\Scripts\$precMigration.sql --startup-project .\..\Api
 }
 echo "SQL File created";
+
+echo "Apply Migration ..."
+
+dotnet dotnet ef database update --startup-project ../Api
+
+echo "Migration Applied"
